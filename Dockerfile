@@ -72,6 +72,8 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 ENV MAVEN_HOME /usr/share/maven
+RUN mkdir ~/.m2
+COPY .m2 ~/.m2
 
 #========================================
 # Add normal user with passwordless sudo
